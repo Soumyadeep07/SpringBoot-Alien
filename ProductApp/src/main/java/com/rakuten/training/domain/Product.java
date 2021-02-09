@@ -1,0 +1,66 @@
+package com.rakuten.training.domain;
+
+import javax.annotation.Generated;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="rakuten")
+public class Product {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
+	int id; 
+	@Column
+	String name;
+	@Column
+	float price; 
+	@Column
+	int qoh;
+
+
+	public Product(String name, float price, int qoh) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.qoh = qoh;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	public int getQoh() {
+		return qoh;
+	}
+
+	public void setQoh(int qoh) {
+		this.qoh = qoh;
+	}
+
+}
